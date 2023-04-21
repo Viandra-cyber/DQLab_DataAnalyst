@@ -1,0 +1,106 @@
+Di dalam Python, operator terbagi ke dalam 6 kelompok:
+
+Arithmetic operators
+Assignment operators
+Comparison operators
+Logical operators
+Identity operators
+Membership operators
+
+#Python While loops
+tagihan = [50000, 75000, -150000, 125000, 300000, -50000, 200000]
+i = 0
+jumlah_tagihan = len(tagihan)
+total_tagihan = 0
+while i < jumlah_tagihan:
+    # jika terdapat tagihan ke-i yang bernilai minus (di bawah nol),
+    # pengulangan akan dihentikan
+    if tagihan[i] < 0:
+        total_tagihan = -1
+        print("terdapat angka minus dalam tagihan, perhitungan dihentikan!")
+        break
+    total_tagihan += tagihan[i]
+    i += 1
+print(total_tagihan)
+ => terdapat angka minus dalam tagihan, perhitungan dihentikan!
+ 
+tagihan = [50000, 75000, -150000, 125000, 300000, -50000, 200000]
+i = 0
+jumlah_tagihan = len(tagihan)
+total_tagihan = 0
+while i < jumlah_tagihan:
+    # jika terdapat tagihan ke-i yang bernilai minus (di bawah nol),
+    # abaikan tagihan ke-i dan lanjutkan ke tagihan berikutnya
+    if tagihan[i] < 0:
+        i += 1
+        continue
+    total_tagihan += tagihan[i]
+    i += 1
+print(total_tagihan)
+=> 750000
+
+# Tugas Praktek
+Tugas:
+Program yang akan aku bangun akan mengolah sebuah list yang bernama list_cash_flow. Setiap elemen dari list_cash_flow 
+berisikan pengeluaran (bilangan negatif) dan pemasukan (bilangan positif) pada perusahaan
+Dari list_cash_flow ini, aku akan menghitung total_pengeluaran dan total_pemasukan perusahaan. 
+
+list_cash_flow = [2500000, 5000000, -1000000, -2500000, 5000000, 10000000,
+-5000000, 7500000, 10000000, -1500000, 25000000, -2500000]
+total_pengeluaran, total_pemasukan = 0, 0
+for dana in list_cash_flow:
+    if dana > 0:
+        total_pemasukan += dana
+    else:
+        total_pengeluaran += dana
+total_pengeluaran *= -1
+print(total_pengeluaran) 
+print(total_pemasukan)
+=> Answer : 
+  12500000
+  65000000
+
+# Mini Quiz
+Aku menyambar ponsel di meja dan membuka pesan singkat dari paman tempo hari yang menjelaskan jika paman harus 
+mengeluarkan uang sebesar 1,5 juta per mobil dalam sehari. Tapi, beliau selalu kebingungan dengan total pengeluaran per bulan karena adanya aturan 
+ganjil-genap yang membuat pengoperasian mobil yang berbeda.
+“Kalau begitu, aku akan masukkan variabel jumlah_hari berisi jumlah hari dalam sebulan dan variabel list_plat_nomor 
+berisi seluruh nomor plat mobil milik paman,” gumamku sendiri. Kalau seperti ini paman hanya perlu mengganti variabel 
+jumlah_hari atau modifikasi variabel list_plat_nomor untuk melacak total pengeluaran paman selama sebulan. Ide Cemerlang!
+# Data
+uang_jalan = 1500000
+jumlah_hari = 31
+list_plat_nomor = [8993, 2198, 2501, 2735, 3772, 4837, 9152]
+# Pengecekan kendaraan dengan nomor pelat ganjil atau genap 
+# Deklarasikan kendaraan_genap dan kendaraan_ganjil = 0
+kendaraan_genap = 0
+kendaraan_ganjil = 0
+for plat_nomor in list_plat_nomor:
+    if plat_nomor % 2 == 0:
+        kendaraan_genap += 1
+    else:
+        kendaraan_ganjil += 1
+# Total pengeluaran untuk kendaraan dengan nomor pelat ganjil 
+# dan genap dalam 1 bulan
+i = 1
+total_pengeluaran = 0
+while i <= jumlah_hari:
+    if i % 2 == 0:
+        total_pengeluaran += (kendaraan_genap * uang_jalan)
+    else:
+        total_pengeluaran += (kendaraan_ganjil * uang_jalan) 
+    i += 1
+# Cetak total pengeluaran
+print(total_pengeluaran)
+
+=> 163500000
+
+
+
+
+
+
+
+
+
+
